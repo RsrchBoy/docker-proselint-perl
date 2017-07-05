@@ -34,7 +34,7 @@ for my $node ($document->children->@*) {
     # make columns work by replacing command with spaces
     my $prefix 
         = $node->isa('Pod::Elemental::Element::Generic::Command')
-        ? (q{ } x length($node->command))
+        ? (q{ } x (length($node->command)+1))
         : q{}
         ;
 
